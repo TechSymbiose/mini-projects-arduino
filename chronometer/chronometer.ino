@@ -1,6 +1,5 @@
 /* Code written by Adrien Louvrier, 31/12/2020
- * Objective : implement a chronometer which can be turn on by a buttonPin and paused 
- * by pressing this buttonPin
+ * Objective : implement a chronometer which can be turn and paused by pressing a button
  * Card used : Arduin Uno
  * Electronic Circuit :
  * input :
@@ -9,7 +8,7 @@
  *  - 4x7 segments display with 330 Omhs resistances (segments connected to pins 2 to 8, point -> 9, digit4 -> 10, digit1 -> 11, digit2 -> 12, digit0 -> 13)
  */
 
-#define a 2 // 4x7 segments display
+#define a 2 // 4x7 segments display pins
 #define b 3
 #define c 4
 #define d 5
@@ -18,14 +17,14 @@
 #define g 8
 #define point 9
 
-#define digit1 10
+#define digit1 10 // digits pins
 #define digit2 11
 #define digit3 12
 #define digit4 13
 
 #define buttonPin A0
 
-/* Values used to display points : points are represented in binary */
+// Values used to display points : points are represented in binary
 #define _0000 0
 #define _0001 1
 #define _0010 2
@@ -43,6 +42,7 @@
 #define _1110 14
 #define _1111 15
 
+// Function prototypes
 void displayTime(int timeMinute, int timeSecond, int timeTenthSecond);
 void displayValue(int value, int points);
 void displayDigit0(int value, int pointValue);
@@ -51,11 +51,12 @@ void displayDigit2(int value, int pointValue);
 void displayDigit3(int value, int pointValue);
 void displayOnDigit(int value);
 
-int const delayValue = 10000;
+int const displayDelayValue = 10000; // delay used to display digits on 7 segments displays
 
-unsigned int long timer;
-unsigned int long timerTime = 0;
-unsigned int long timerbuttonPin = 0;
+unsigned int long timerDisplay; // timer used to display
+unsigned int long timerTime = 0; // timer used to count time
+unsigned int long timerButton = 0; // timer used to consider the press on the button
+
 int buttonPressed = 0;
 int isDisplayOK = 0;
 int digit1Displayed = 0;
@@ -68,6 +69,7 @@ int timeSecond = 0;
 int timeTenthSecond = 0;
 
 void setup() {
+  // Put the segments inputs in output mode
   for (int i = 2; i<=13; ++i){
     pinMode(i, OUTPUT);
   }
@@ -81,10 +83,12 @@ void setup() {
 
 void loop() {
   int buttonPinValue = digitalRead(buttonPin);
+  
   if (buttonPinValue && buttonPressed){
     isDisplayOK = !isDisplayOK;
     buttonPressed = 0;
   }
+  
   if (isDisplayOK){
     if (timerTime == 0) {
       timerTime = micros();
@@ -106,7 +110,7 @@ void loop() {
     timeMinute = timeMinute%10;
   }
 
-  if (!buttonPinValue && micros() - timerbuttonPin > 30000){
+  if (!buttonPinValue && micros() - timerButton > 30000) {
     buttonPressed = 1;
   }
   displayTime(timeMinute, timeSecond, timeTenthSecond);
@@ -119,36 +123,36 @@ void displayTime(int timeMinute, int timeSecond, int timeTenthSecond) {
 void displayValue(int value, int points) {
   if (!digit1Displayed && !digit2Displayed && !digit3Displayed && !digit4Displayed){
     digit1Displayed = 1;
-    timer = micros();
+    timerDisplay = micros();
   }
-  if (digit1Displayed && (micros()-timer > delayValue)){
+  if (digit1Displayed && (micros()-timerDisplay > displayDelayValue)){
     displayDigit1(value/1000, (points>>3) & 1);
     digit1Displayed = 0;
   }
 
   if (!digit1Displayed && !digit2Displayed && !digit3Displayed && !digit4Displayed){
     digit2Displayed = 1;
-    timer = micros();
+    timerDisplay = micros();
   }
-  if (digit2Displayed && (micros()-timer > delayValue)){
+  if (digit2Displayed && (micros()-timerDisplay > displayDelayValue)){
     displayDigit2((value%1000)/100, (points>>2) & 1);
     digit2Displayed = 0;
   }
 
   if (!digit1Displayed && !digit2Displayed && !digit3Displayed && !digit4Displayed){
     digit3Displayed = 1;
-    timer = micros();
+    timerDisplay = micros();
   }
-  if (digit3Displayed && (micros()-timer > delayValue)){
+  if (digit3Displayed && (micros()-timerDisplay > displayDelayValue)){
     displayDigit3((value%100)/10, (points >> 1) & 1);
     digit3Displayed = 0;
   }
 
   if (!digit1Displayed && !digit2Displayed && !digit3Displayed && !digit4Displayed){
     digit4Displayed = 1;
-    timer = micros();
+    timerDisplay = micros();
   }
-  if (digit4Displayed && (micros()-timer > delayValue)){
+  if (digit4Displayed && (micros()-timerDisplay > displayDelayValue)){
     displayDigit4(value%10, points & 1);
     digit4Displayed = 0; 
   }
