@@ -1,6 +1,18 @@
 // Code written by Adrien Louvrier, 29/12/2020
 // Objective : print the distance measured by the ultrasonic sensor and print the value on the 7 segments display
 
+/* Code written by Adrien Louvrier, 29/12/2020
+ * Objective : print the distance measured by the ultrasonic sensor and print the value on the 7 segments display
+ * Card used : Arduino Uno
+ * 
+ * Electronic Circuit :
+ * input :
+ * - An ultrasonic sensor (trig pin -> pin 12, echo pin -> pin 13)
+ * 
+ * output :
+ * - 4*7 segments display (segments pins connected to pins 2 to 9, digit3 pin -> pin 10, digit4 pin -> pin 11)
+ */
+
 #define a 2 // segments display pins
 #define b 3
 #define c 4

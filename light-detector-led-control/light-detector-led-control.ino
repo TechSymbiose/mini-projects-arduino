@@ -7,7 +7,6 @@
  *  - photoresistor in parallel with a 10kOhms resistor connected to pin A0, 3V and grd
  * output :
  *  - led with 330 Ohms resistance connected to pin 3 and grd
- * 
  */
  
 #define ledPin 2 // led pin 

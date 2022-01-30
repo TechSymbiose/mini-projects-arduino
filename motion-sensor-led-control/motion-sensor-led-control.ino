@@ -1,12 +1,14 @@
  /* Code written by Adrien Louvrier, 26/12/2020
-  *  Objective : turn on a ledPin thanks to a motion sensor
- * 
- * Electronic Circuit : 
- * input :
- *  - Motion sensor (out -> A0, Vcc -> 3V, grd -> grd)
- * output :
- *  - ledPin with 330 Ohms connected to pin 2 and grd
- */
+  * Objective : turn on a ledPin thanks to a motion sensor
+  * Card used : Arduino Uno
+  * 
+  * Electronic Circuit : 
+  * input :
+  *  - Motion sensor (out -> A0, Vcc -> 3V, grd -> grd)
+  * 
+  * output :
+  *  - ledPin with 330 Ohms connected to pin 2 and grd
+  */
 
 #define ledPin 2 // led pin
 #define motionSensorPin 4 // motion sensor pin

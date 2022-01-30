@@ -1,12 +1,15 @@
-/* Objectif : Afficher sur une matrice led ce que l'utilisateur tappe sur le digicode
- * Date de création : 08/01/2021 
- * Auteur : Adrien Louvrier
- * Carte utilisée : Mega 2560
- * Circuit : 
- * - un digicode
- * - une matrice led 1088AS connectée aux pins 49, 51, 53, 5V et grds
+/*  Code written by Adrien Louvrier, 08/01/2021
+ *  Objective : display on a leds matrix what the user is typing on the digicode
+ * Card used : Arduino Mega 2560
+ * Eletronic Circuit :
+ * input : 
+ * - a digicode (line0 -> pin 39, line1 -> pin 37, line2 -> pin 35, line3 -> pin 33,
+ * column0 -> pin 29, column1 -> pin 27, column2 -> 25, column3 -> 23)
  * 
- * The writePix, writeLine, initONE088AS and clearMatrix functions weren't written by me
+ * output :
+ * - a 1088AS leds matrix connected to pins 49, 51, 53, 5V and grd
+ * 
+ * Note : the functions used weren't written by me
  */
 
 #define DIN_PIN 49

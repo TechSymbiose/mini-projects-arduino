@@ -1,10 +1,13 @@
-/* Objectif : Allumer une led avec un capteur de son
- * Carte utilisée : Arduino Uno
- * Date de création : 13/01/2021
- * Auteur : Adrien Louvrier
- * Circuit :
- * - un capteur de son connecté aux pins 3, 5V et grd
- * - une led avec résistance 330 Ohms en série connectée à la pin 9 et grd
+/* Code written by Adrien Louvrier, 13/01/2021
+ * Objective : turn on an led with a sound sensor
+ * Card used : Arduino Uno
+ * 
+ * Electronic Circuit :
+ * input :
+ * - A sound sensor connected to pin 3, 5V and grd
+ * 
+ * output :
+ * - LED with a 330 Ohms resistor in serial connected to pin 9 and grd
  */
 
 #define SoundSensorDigitalPin 3 // Sound sensor pin

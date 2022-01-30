@@ -1,11 +1,15 @@
 /*  Code written by Adrien Louvrier, 04/01/2021
  *  Objective : make a countdown of one minute we can trigger by pressing a button
- * Circuit :
- * - un button connecté à la pin 12, 5V et grd
- * - un 4*7 segments display connectés aux pins 2 à 13
+ * Card used : Arduino Uno
+ * Eletronic Circuit :
+ * input : 
+ * - a button connected to pin 12, 5V and grd with a 10kOhms resistor in parallel connected to grd
+ * 
+ * output :
+ * - a 4*7 segments display connected to pins 2 to 13
  */
 
-#define a 2 // // Print the date and the time in the serial monitor
+#define a 2 // print the date and the time in the serial monitor
 #define b 3
 #define c 4
 #define d 5
@@ -21,16 +25,53 @@
 
 #define button A0
 
+/**
+ * @brief Print the time using the 4*7 segments display
+ * 
+ * @param timeMinute : the value of the minuts to print
+ * @param timeSecond  : the value of the seconds to print
+ * @param timeTenthSecond  : the value of the tenths of a second to print
+ */
 void printTime(int timeMinute, int timeSecond, int timeTenthSecond);
-void printDigit1(int timeTenthSecond);
+
+/**
+ * @brief : print on the digit 1
+ * 
+ * @param value : the value to print on the digit 1
+ */
+void printDigit1(int value);
+
+/**
+ * @brief : print on the digit 2
+ * 
+ * @param timeSecond : the value to print on the digit 2
+ */
 void printDigit2(int timeSecond);
+
+/**
+ * @brief : print on the digit 3
+ * 
+ * @param timeSecond : the value to print on the digit 3
+ */
 void printDigit3(int timeSecond);
+
+/**
+ * @brief : print on the digit 4
+ * 
+ * @param timeMinute the value to print on the digit 4
+ */
 void printDigit4(int timeMinute);
+
+/**
+ * @brief : Print a value on the current digit
+ * 
+ * @param number : the number to print on the current digit
+ */
 void printValue(int number);
 
 int const delayValue = 10000; // delay used to display digits on 7 segments displays
 
-int timeMinute = 1;
+int timeMinute = 1; // Values for the start time
 int timeSecond = 0;
 int timeTenthSecond = 0;
 
@@ -38,16 +79,16 @@ unsigned int long timerDisplay; // timer used to display
 unsigned int long timerTime = 0; // timer used to count time
 unsigned int long timerbutton = 0; // timer used to consider the press on the button
 
-int endValue  = 0;
-int isDisplayOK = 0;
-int displayDigit1 = 0;
-int displayDigit2 = 0;
-int displayDigit3 = 0;
-int displayDigit4 = 0;
+boolean endValue  = 0; // Booleans used  for the countdown
+boolean isDisplayOK = 0;
+boolean displayDigit1 = 0;
+boolean displayDigit2 = 0;
+boolean displayDigit3 = 0;
+boolean displayDigit4 = 0;
 
 void setup() {
   // Put the segments inputs in output mode
-  for (int i = 2; i<=13; ++i){
+  for (int i = 2; i<=13; ++i) {
     pinMode(i, OUTPUT);
   }
 
@@ -59,34 +100,50 @@ void setup() {
 }
 
 void loop() {
+  // Read the current state of the button
   int buttonValue = digitalRead(button);
-  if (buttonValue){
+
+  // If the button is pressed, start the countdown
+  if (buttonValue) {
     isDisplayOK = 1;
   }
-  if (isDisplayOK && !endValue ){
-    if (micros()-timerDisplay > 100000){
+
+  // Countdown until reaching the final value
+  if (isDisplayOK && !endValue) {
+
+    // Update time every tenth of a second
+    if (micros()-timerDisplay > 100000) {
       timerTime = micros();
-      if (timeTenthSecond == 0){
+
+      // Loop the tenths of a second to 9 when reaching 0
+      if (timeTenthSecond == 0) {
         timeTenthSecond = 9;
-        if (timeSecond != 0){
+
+        // Decreasing the secunds until reaching 0 
+        if (timeSecond != 0) {
           --timeSecond;
-        }
-        else{
-          if (timeMinute != 0){
+
+        } else {
+          // Decreasing minuts until reaching 0
+          if (timeMinute != 0) {
             --timeMinute;
           }
+          // Loop the seconds to 59 when reaching 0
           timeSecond = 59;
         }
-      }
-      else{
+      } else {
+        // Decreasing the tenths of a second until reaching 0
         --timeTenthSecond;
       }
     }
     
+    // Stop the countdown when reaching the final value
     if (timeMinute == 0 && timeSecond == 0 && timeTenthSecond == 0){
       endValue  = 1;
     }
   }
+
+  // Print the current time in the 4*7 segments display
   printTime(timeMinute, timeSecond, timeTenthSecond);
 }
 

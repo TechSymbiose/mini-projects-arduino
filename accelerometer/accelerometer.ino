@@ -1,11 +1,13 @@
-/* Objectif : Utiliser un accéléromètre pour afficher des leds sur une matrice de led
-   Carte utilisée : Arduino Uno
-   Date de création : 30/01/2021
-   Auteur : Adrien Louvrier
-   Circuit :
-   - Un accéléromètre connecté à 5V, grd, SCL et SDA
-   - Une matrice de leds connectée à 5V, grd, pins 8, 9 et 10
-   The following functions weren't written by me : convert_int16_to_str, writeLine, writeMatrix, init_1088AS, clearMatrix
+/* Code written by : Adrien Louvrier, 30/01/2021
+ * Objective : control a leds matrix with an accelerometer
+ * Card used : Arduino Uno
+ * Eletronic Circuit :
+ * input :
+ * - an accelerometer connected to 5V, grd, SCL and SDA
+ * output :
+ * - A led matrix connected to 5V, grd, pins 8, 9 and 10
+ * 
+ * Note : the following functions weren't written by me : convert_int16_to_str, writeLine, writeMatrix, init_1088AS, clearMatrix
 */
 
 #include <Wire.h>

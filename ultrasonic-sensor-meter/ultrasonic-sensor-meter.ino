@@ -1,10 +1,13 @@
-/* Objectif : utiliser un capteur ultrasonic pour connaître et afficher des distances
- *  
- *  Date de création : 26/12/2020
- *  Auteur : Adrien Louvrier
- *  Circuit : 
- *  - un capteur ultrasonic connecté aux pins 8 et 10
- *  - 3 leds + résistances 330 Ohms connectées aux pins 2, 4 et 6
+/* Code written by Adrien Louvrier, 26/12/2021
+ * Objective : Indicate the distance measured by an ultrasonic sensor with leds
+ * Card used : Arduino Uno
+ * 
+ * Electronic Circuit :
+ * input :
+ * - An ultrasonic sensor (trig pin -> pin A0, echo pin -> pin A1)
+ * 
+ * output :
+ * - 3 leds with a 330 Ohms resistors in serial connected to pins 2, 4, 6 and grd
  */
 
 #define trigPin A0 // ultrasonic sensor pins

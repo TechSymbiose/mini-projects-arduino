@@ -6,7 +6,8 @@
  * input :
  *  - Button connected to pin A0, 5V and grd
  * output : 
- *  - 4x7 segments display with 330 Omhs resistances (segments connected to pins 2 to 8, point -> 9, digit4 -> 10, digit1 -> 11, digit2 -> 12, digit0 -> 13)
+ *  - 4x7 segments display with 330 Omhs resistor (segments connected to pins 2 to 8, 
+ * point -> pin 9, digit4 -> pin 10, digit1 -> pin 11, digit2 -> pin 12, digit0 -> pin 13)
  */
 
 #define PIN_0 B00000001

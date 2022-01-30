@@ -1,6 +1,16 @@
-/* Objectif : tester le buzzer passif
+/* Code written by Adrien Louvrier
+ * Objective : Make an RFID access control turning on the red led when putting the card,
+ * turning on the green led and playing music when putting the badge
+ * Card used : Arduino Mega 2560
  * 
+ * Electronic Circuit :
+ * input :
+ * - A RFID reader (RST -> pin 23, SS -> pin 25)
  * 
+ * output :
+ * - A buzzer connected to pin 45
+ * - A red led with 330 Ohms resistor connected to pin 8 and grd
+ * - A green led with 330 Ohms resistor connected to pin 9 and grd
  */
 
 #include <SPI.h>
@@ -19,9 +29,8 @@
 
 // Prototype of the function
 
-/*  Objective : Play Ode to Joy by Beethoven using the buzzer
- * input : none
- * output : none
+/**
+ * @brief Play Ode to Joy by Beethoven using the buzzer
  */
 void playMusic();
 

@@ -1,14 +1,20 @@
-/* Objectif : Utiliser un accéléromètre pour faire un rapporteur sur 2 axes (x et y)
-   Carte utilisée : Arduino Mega 2560
-   Date de création : 31/01/2021
-   Auteur : Adrien Louvrier
-   Circuit :
-   - Un accéléromètre connecté à 5V, grd, SCL et SDA
-   - Un écran LCD connecté aux pins 35 à 45, 5V et grd
-   - 10 leds connectées aux pins 36,38,40,42,44 et 48,19,50,53,52 et grd
+/* Code written by Adrien Louvrier, 31/01/2021
+ * Objective : control leds with a potPinPinentiometer
+ * Card used : Arudino Mega 2560
+ * 
+ * Electronic circuit :
+ * input :
+ *  - An accelerometer connected to 5V, grd, SCL and SDA
+ * 
+ * output :
+ *  - 10 leds with 330 Ohms resistors connected to pins 36, 38, 40, 42, 44, 
+ * 48, 19, 50, 53, 52 and grd
+ * - A lcd screen connected (rs -> pin 45, en -> pin 43, d4 -> pin 41,
+ * d5 -> pin 39, d6 -> pin 37, d7 -> pin 35, vcc -> 5V, grd -> grd)
+ * 
+ * The convert_int16_to_str function wasn't written by me
+ */
 
-   The convert_int16_to_str function weren't written by me
-*/
 
 #include <Wire.h>
 #include <LiquidCrystal.h>

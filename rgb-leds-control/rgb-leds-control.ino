@@ -1,12 +1,15 @@
-/* Objectif : piloter une led RGB avec un joysticks et 2 boutons (+ et -)
- *  
- *  Date de création : 27/12/2020
- *  Auteur : Adrien Louvrier
- *  Circuit : 
- *  - un joystick connecté aux pins A1, 12, 5V et grd
- *  - 3 leds rgbRedPin, rgbGreenPin et rgbBluePin + résistances 330 Ohms en série connectées aux pins 8, 9, 10 et grd
- *  - une led RGB connectée aux pins 3, 5, 6, et grd
- *  - un encodeur rotatif connecté aux pins 2, 4, 5V et grd
+/* Code written by Adrien Louvrier, 27/12/2020
+ * Objective : control a rgb led with a joystick and an encoder
+ * Card used : Arduino Mega 2560
+ * 
+ * Electronic Circuit :
+ * input :
+ * - A joystick connected to pins A1, 5V and grd
+ * - An encoder (output A -> pin 4, output B -> pin 2)
+ * 
+ * output :
+ * - 3 leds (red led, green led and blue led) with 330 Ohms resistors in serial connected to pins 8, 9, 10 and grd
+ * - An RGB led (red pin -> pin 6, green pin -> pin 5, blue pin -> pin 3, grd pin -> grd)
  */
 
  #define VRy A1

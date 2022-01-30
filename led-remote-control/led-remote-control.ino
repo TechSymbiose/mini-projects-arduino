@@ -4,14 +4,14 @@
  * 
  * Electronic circuit : 
  * input :
- *  - IR receiver connected to pin 23, 5V and grd
+ * - IR receiver connected to pin 23, 5V and grd
  * output :
- *  - 9 leds with 330 Ohms resistors connected to grd and pins 45, 41, 37, 43, 39, 35, 33, 31, 29
+ * - 9 leds with 330 Ohms resistors connected to grd and pins 45, 41, 37, 43, 39, 35, 33, 31, 29
  */
 
 #include <IRremote.h>
 
-#define led1Pin 45 // Leds pins
+#define led1Pin 45 // leds pins
 #define led2Pin 41
 #define led3Pin 37
 #define led4Pin 43
@@ -21,9 +21,9 @@
 #define led8Pin 31
 #define led9Pin 29
 
-#define IR_PIN 23 // Remote pin
+#define IR_PIN 23 // remote pin
 
-#define POWER 0xFFA25D // Remote buttons values
+#define POWER 0xFFA25D // remote buttons values
 #define VOL_PLUS 0xFF629D
 #define STOP 0xFFE21D
 #define PREV 0xFF22DD
@@ -45,7 +45,7 @@
 #define HEIGHT 0xFF4AB5
 #define NINE 0xFF52AD
 
-int led1State = 0; // Leds states
+int led1State = 0; // leds states
 int led2State = 0;
 int led3State = 0;
 int led4State = 0;
@@ -77,7 +77,6 @@ void setup() {
 
 void loop() {
   // Check if we received something
-
   // If we received something, change leds state according to the button pressed
   if (irrecv.decode(&results)){
     switch (results.value){
