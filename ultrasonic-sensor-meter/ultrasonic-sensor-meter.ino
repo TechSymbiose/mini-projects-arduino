@@ -1,8 +1,10 @@
 /* Code written by Adrien Louvrier, 26/12/2021
+ *
  * Objective : Indicate the distance measured by an ultrasonic sensor with leds
  * Card used : Arduino Uno
  * 
  * Electronic Circuit :
+ * 
  * input :
  * - An ultrasonic sensor (trig pin -> pin A0, echo pin -> pin A1)
  * 

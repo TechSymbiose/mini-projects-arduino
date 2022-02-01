@@ -1,8 +1,10 @@
 /* Code written by Adrien Louvrier, 25/12/2020
+ *
  * Objective : control leds with a photoresistor
  * Card used : Arudino Uno
  * 
  * Electronic circuit :
+ * 
  * input :
  *  - Photoresistor with 10kOhms in parallel connected to pin A0, 5V and grd
  * 

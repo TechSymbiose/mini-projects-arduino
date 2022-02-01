@@ -1,15 +1,18 @@
 /*  Code written by Adrien Louvrier, 04/01/2021
+ *
  *  Objective : make a countdown of one minute we can trigger by pressing a button
  * Card used : Arduino Uno
+ * 
  * Eletronic Circuit :
+ * 
  * input : 
  * - a button connected to pin 12, 5V and grd with a 10kOhms resistor in parallel connected to grd
  * 
  * output :
- * - a 4*7 segments display connected to pins 2 to 13
+ * - 4x7 segments display (a to g -> pins 2 to 8, point -> 9, digit 1 to 4 -> pins 10 to 13) with 330 Ohms resistor for each pin
  */
 
-#define a 2 // print the date and the time in the serial monitor
+#define a 2 // segments pins
 #define b 3
 #define c 4
 #define d 5

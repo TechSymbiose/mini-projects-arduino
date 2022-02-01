@@ -1,12 +1,25 @@
-# led controlled by potentiometer 
+# **Potentiomer led control**
 
-Project done by Adrien Louvrier, 26/12/2020
-The goal is to control a led with a potentiometer
+Code written by Adrien Louvrier
+
+*Objective* : control a ledPin with a potPinentiometer
+
 Card used : Arduino Uno
 
 # Electronic circuit
-input : 
-	- potentiometer in parallel with a 10kOhms resistor connected to pin A0, 5V and grd
-	
-output : 
-	- led with 330 Ohms resistance connected to pin 3 and grd
+
+## **List of the components**
+
+Component | Quantity 
+----------|----------
+Arduino Uno | 1
+potentiometer | 1
+10kOhms resistor | 1
+led | 1
+330 Ohms resistor | 1
+
+*input* : 
+- 10kOmhs potPinentiometer in parallel with a 10kOhms resistance connected to pin A0, 5V and grd
+
+*output* : 
+- ledPin with 330 Ohms resistance connected to pin 3 and grd

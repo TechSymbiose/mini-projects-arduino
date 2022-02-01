@@ -1,9 +1,12 @@
 /* Code written by Adrien Louvrier
+
  * Objective : Make an RFID access control turning on the red led when putting the card,
  * turning on the green led and playing music when putting the badge
+ * 
  * Card used : Arduino Mega 2560
  * 
  * Electronic Circuit :
+ * 
  * input :
  * - A RFID reader (RST -> pin 23, SS -> pin 25)
  * 

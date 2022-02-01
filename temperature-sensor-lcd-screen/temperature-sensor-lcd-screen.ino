@@ -1,9 +1,10 @@
 /* Code written by Adrien Louvrier, 07/01/2021
-
- * Objective : display the tempereture measure on a LCD display
+ *
+ * Objective : display the tempereture measured on a LCD display
  * Card used : Mega 2560
  * 
  * Electronic Circuit : 
+ * 
  * input : 
  *  - DHT11 temperature sensor (DHTPIN -> 53, Vcc -> 5V, grd -> grd)
  * 

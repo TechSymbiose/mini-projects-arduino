@@ -1,10 +1,14 @@
 /* Code written by Adrien Louvrier, 31/12/2020
+ *
  * Objective : implement a chronometer which can be turn on by a buttonPin and paused 
  * by pressing this buttonPin
  * Card used : Arduin Uno
+ * 
  * Electronic Circuit :
+ * 
  * input :
  *  - Button connected to pin A0, 5V and grd
+ * 
  * output : 
  *  - 4x7 segments display with 330 Omhs resistor (segments connected to pins 2 to 8, 
  * point -> pin 9, digit4 -> pin 10, digit1 -> pin 11, digit2 -> pin 12, digit0 -> pin 13)

@@ -1,12 +1,24 @@
-# Motion sensor
+# **Motion Detection Lamp**
 
-Project done by Adrien Louvrier, 26/12/2020
-The goal is to turn on a led thanks to a motion sensor
-card used : Arduino Uno
+Code written by Adrien Louvrier, 26/12/2020
+
+*Objective* : turn on a ledPin thanks to a motion sensor 
+
+Card used : Arduino Uno
 
 # Electronic circuit
-input : 
-	- Motion sensor (out -> A0, Vcc -> 3V, grd -> grd)
-	
-output : 
-	- led with 330 Ohms connected to pin 2 and grd
+
+## **List of the components**
+
+Component | Quantity 
+----------|----------
+Arduino Uno | 1
+motion sensor | 1
+led | 1
+330 Ohms resistor | 1
+
+*input* : 
+- motion sensor (out -> A0, Vcc -> 3V, grd -> grd)
+
+*output* : 
+- led with 330 Ohms connected to pin 2 and grd

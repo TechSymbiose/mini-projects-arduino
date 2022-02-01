@@ -1,6 +1,8 @@
-/*  Code written by Adrien Louvrier, 08/01/2021
- *  Objective : display on a leds matrix what the user is typing on the digicode
+/* Code written by Adrien Louvrier, 08/01/2021
+ *
+ * Objective : display on a leds matrix what the user is typing on the digicode
  * Card used : Arduino Mega 2560
+ * 
  * Eletronic Circuit :
  * input : 
  * - a digicode (line0 -> pin 39, line1 -> pin 37, line2 -> pin 35, line3 -> pin 33,

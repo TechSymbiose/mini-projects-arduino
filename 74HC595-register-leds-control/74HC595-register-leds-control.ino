@@ -1,8 +1,12 @@
 /* Code written by : Adrien Louvrier, 05/02/2021
- *  Objectif : use a 74HC595 IC registers to turn on leds
+ *
+ *  Objective : use a 74HC595 IC registers to turn on leds
  * Card used : Arduino Uno
- * Electronic Circuit : 
+ *
+ * Electronic Circuit :
+ *
  * input : none
+ *
  * output :
  * - a 74HC595 register connected to pins 8, 9 and 10, 5V and grd
  * - 8 leds with résistors connected to the register and grd

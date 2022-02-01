@@ -1,15 +1,17 @@
 /* Code written by Adrien Louvrier, 27/12/2020
+ *
  * Objective : control a rgb led with a joystick and an encoder
- * Card used : Arduino Mega 2560
+ * Card used : Arduino Uno
  * 
  * Electronic Circuit :
+ * 
  * input :
  * - A joystick connected to pins A1, 5V and grd
  * - An encoder (output A -> pin 4, output B -> pin 2)
  * 
  * output :
  * - 3 leds (red led, green led and blue led) with 330 Ohms resistors in serial connected to pins 8, 9, 10 and grd
- * - An RGB led (red pin -> pin 6, green pin -> pin 5, blue pin -> pin 3, grd pin -> grd)
+ * - An RGB led with 330 Ohms resitor in serial (red pin -> pin 6, green pin -> pin 5, blue pin -> pin 3, grd pin -> grd)
  */
 
  #define VRy A1

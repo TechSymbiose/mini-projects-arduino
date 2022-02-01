@@ -1,9 +1,10 @@
-/*  Code written by Adrien Louvrier, 14/01/2021
-
- *  Objective : turn on leds according to the level of water
+/* Code written by Adrien Louvrier, 14/01/2021
+ *
+ * Objective : Turn on leds according to the level of water
  * Card used : Arduino Uno
  * 
  * Electronic circuit
+ * 
  * input : 
  *  - water level sensor (S -> A0, Vcc -> 5V, grd -> grd)
  * 

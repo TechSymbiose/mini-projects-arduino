@@ -1,8 +1,10 @@
 /* Code written by Adrien Louvrier, 31/01/2021
- * Objective : control leds with a potPinPinentiometer
- * Card used : Arudino Mega 2560
+ *
+ * Objective : Make a 2 axis angle using an accelerometer
+ * Card used : Arduino Mega 2560
  * 
  * Electronic circuit :
+ * 
  * input :
  *  - An accelerometer connected to 5V, grd, SCL and SDA
  * 

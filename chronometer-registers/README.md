@@ -1,8 +1,8 @@
-# **Chronometer**
+# **Chronometer with registers**
 
 Code written by Adrien Louvrier, 31/12/2020
 
-*Objective* : implement a chronometer which can be turn and paused by pressing a button
+*Objective* : implement a chronometer which can be turn on by a buttonPin and paused by pressing this buttonPin
 
 card used : Arduino Uno
 

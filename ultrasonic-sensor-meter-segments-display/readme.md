@@ -1,9 +1,24 @@
-# Distance meter
+# **Ultrasonic Sensor Meter with 7 Segments Diplsay**
 
-Project done by Adrien Louvrier, 29/12/2020
-The goal is to print on the 7 segments displays the distance measured by the ultrasonic sensor
+Code written by Adrien Louvrier, 29/12/2020
+
+*Objective* : Print the distance measured by the ultrasonic sensor and print the value on the 7 segments display
+
+Card used : Arduino UNo
 
 # Electronic circuit
-input : 
-- ultrasonic sensor (trig -> pin 12, echo -> pin 13, Vcc -> 5V, grd -> grd)
-- 4*7 segments display (a to g -> 2 to 8, point -> 9, digit 3 -> 10, digit 4 -> 11)
+
+## **List of the components**
+
+Component | Quantity 
+----------|----------
+Arduino Uno | 1
+Ultrasonic sensor | 1
+4*7 segments diplsay | 1
+330 Ohms resistor | 12
+
+*input* : 
+ - An ultrasonic sensor (trig pin -> pin 12, echo pin -> pin 13)
+
+*output* : 
+- 4*7 segments display (segments pins connected to pins 2 to 9, digit3 pin -> pin 10, digit4 pin -> pin 11)

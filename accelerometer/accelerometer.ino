@@ -5,16 +5,17 @@
  * input :
  * - an accelerometer connected to 5V, grd, SCL and SDA
  * output :
- * - A led matrix connected to 5V, grd, pins 8, 9 and 10
+ * - A leds matrix connected to 5V, grd, pins 8, 9 and 10
+ * - 4 leds with 330 Ohms resistors in serial connected to pins 2, 3, 4, 5 and grd
  * 
  * Note : the following functions weren't written by me : convert_int16_to_str, writeLine, writeMatrix, init_1088AS, clearMatrix
 */
 
 #include <Wire.h>
 
-#define MPU_ADDR 0x68
+#define MPU_ADDR 0x68 // Accelerometer adress
 
-#define LED_LT 5
+#define LED_LT 5 // leds pins
 #define LED_LB 2
 #define LED_RB 3
 #define LED_RT 4

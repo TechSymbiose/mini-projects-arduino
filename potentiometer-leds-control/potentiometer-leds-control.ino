@@ -1,10 +1,12 @@
 /* Code written by Adrien Louvrier, 25/12/2020
- * Objective : control leds with a potPinPinentiometer
+ *
+ * Objective : control leds with a potentiometer
  * Card used : Arudino Uno
  * 
  * Electronic circuit :
+ * 
  * input :
- *  - Photoresistor with 10kOhms in parallel connected to pin A0, 5V and grd
+ *  - Potentiometer with 10kOhms in parallel connected to pin A0, 5V and grd
  * 
  * output :
  *  - 5 leds with 330 Ohms resistors connected to pin 2, 4, 6, 8, 10 and grd

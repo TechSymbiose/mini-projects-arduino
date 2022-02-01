@@ -1,11 +1,14 @@
 /* Code written by Adrien Louvrier, 31/12/2020
+ *
  * Objective : implement a chronometer which can be turn and paused by pressing a button
  * Card used : Arduin Uno
+ * 
  * Electronic Circuit :
  * input :
- *  - Button connected to pin A0, 5V and grd
+ * - Button connected to pin A0, 5V and grd
+ * - 10kOhms resistor connected to pin A0 and grd
  * output : 
- *  - 4x7 segments display with 330 Omhs resistances (segments connected to pins 2 to 8, point -> 9, digit4 -> 10, digit1 -> 11, digit2 -> 12, digit0 -> 13)
+ * - 4x7 segments display with 330 Omhs resistances (segments connected to pins 2 to 8, point -> 9, digit4 -> 10, digit1 -> 11, digit2 -> 12, digit0 -> 13)
  */
 
 #define a 2 // 4x7 segments display pins

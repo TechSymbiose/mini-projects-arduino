@@ -1,18 +1,19 @@
 /* Code written by Adrien Louvrier
- *  Objective : control a ledPin with a potPinentiometer
+ *
+ *  Objective : control a ledPin with a potentiometer
  *  Card used : Arduino Uno
  *  
  *  Electronic Circuit :
+ * 
  *  input :
- *    - 10kOmhs potPinentiometer in parallel with a 10kOhms resistance connected to pin A0, 5V and grd
+ *    - 10kOmhs poentiometer in parallel with a 10kOhms resistance connected to pin A0, 5V and grd
  *  
  *  output :
  *    - ledPin with 330 Ohms resistance connected to pin 3 and grd
- * 
  */
 
 #define ledPin 3 // led pin
-#define potPin A0 // Potentiometer pin
+#define potPin A0 // potentiometer pin
 
 void setup() {
   pinMode(ledPin, OUTPUT);
